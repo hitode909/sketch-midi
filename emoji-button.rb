@@ -19,7 +19,7 @@ EOF
   end
 
   def self.paste text
-    system %Q(echo #{ Shellwords.escape text } | pbcopy && osascript -e 'tell application "System Events" to keystroke "v" using {command down}')
+    system %Q(echo "#{ text }\\c" | pbcopy && osascript -e 'tell application "System Events" to keystroke "v" using {command down}')
   end
 end
 
