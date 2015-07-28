@@ -19,7 +19,10 @@ loop {
       system %q|osascript -e 'tell application "System Events" to keystroke ":pray:"'|
       system %q|osascript -e 'tell application "System Events" to keystroke return'|
     elsif data == [151, 30, 127]
-      system %q|osascript -e 'tell application "System Events" to keystroke "LGTM"'|
+      system %q|osascript -e 'tell application "System Events" to keystroke ":shipit:"'|
+      system %q|osascript -e 'tell application "System Events" to keystroke return'|
+    elsif data == [152, 30, 127]
+      system %q|osascript -e 'tell application "System Events" to keystroke "git fetch"'|
       system %q|osascript -e 'tell application "System Events" to keystroke return'|
     elsif data == [184, 25, 0]
       system %q|osascript -e 'tell application "System Events" to keystroke "git pull"'|
@@ -27,6 +30,16 @@ loop {
     elsif data == [184, 25, 127]
       system %q|osascript -e 'tell application "System Events" to keystroke "git push"'|
       system %q|osascript -e 'tell application "System Events" to keystroke return'|
+    elsif data == [182, 23, 0]
+      system %q|osascript -e 'activate application "Google Chrome"'|
+    elsif data == [182, 23, 32]
+      system %q|osascript -e 'activate application "Emacs"'|
+    elsif data == [182, 23, 64]
+      system %q|osascript -e 'activate application "iTerm"'|
+    elsif data == [182, 23, 96]
+      system %q|osascript -e 'activate application "YoruFukurou"'|
+    elsif data == [182, 23, 127]
+      system %q|osascript -e 'activate application "Slack"'|
     end
   }
 }
